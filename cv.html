@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV</title>
+<meta name="description" content="CV">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Primary">
+  <div class="nav-pill" role="tablist">
+    <a class="tab-link" href="index.html">Saaim</a>
+    <a class="tab-link" href="index.html#projects">Projects</a>
+    <a class="tab-link" href="index.html#writing">Writing</a>
+    <a class="tab-link" href="index.html#photography">Photography</a>
+  </div>
+  <div class="nav-links">
+    <a href="https://github.com/sjapanwala" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://www.linkedin.com/in/sjapanwala" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="cv.html">CV</a>
+  </div>
+</nav>
+
+<main class="cv-page">
+  <h1 class="section-header-cv">cv.</h1>
+
+  <p class="cv-intro">Political Science &amp; Psychology graduate interested in law, public policy, and writing — drawn to how institutions, governance, and narrative shape public life. The short version is below — click any entry to expand it.</p>
+
+  <div class="cv-skills">
+    <span class="cv-skill-chip">Debate</span>
+    <span class="cv-skill-chip">Argumentation</span>
+    <span class="cv-skill-chip">Policy Analysis</span>
+    <span class="cv-skill-chip">Urdu</span>
+    <span class="cv-skill-chip">English</span>
+  </div>
+
+  <button class="cv-toggle-all" id="cvToggleAll" type="button">Expand all</button>
+
+  <div id="cvContent"><!-- rendered by js/cv.js from content/cv.js --></div>
+</main>
+
+<script src="content/cv.js"></script>
+<script src="js/cv.js"></script>
+</body>
+</html>

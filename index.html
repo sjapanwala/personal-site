@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saaim Japanwala</title>
+<meta name="description" content="Saaim's Corner of The Internet">
+
+<!-- Open Graph / Twitter link-preview meta -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Saaim Japanwala">
+<meta property="og:description" content="A small corner of the internet with notes on projects, writing, and photography.">
+<meta property="og:image" content="assets/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Saaim Japanwala">
+<meta name="twitter:description" content="A small corner of the internet with notes on projects, writing, and photography.">
+<meta name="twitter:image" content="assets/og-image.svg">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============================================================
+     PILL NAV — sticky, top-left. Tabs on the left, plain external
+     links on the right. Tab switching is handled in js/main.js
+     (no page reloads — a single static HTML file).
+     ============================================================ -->
+<nav class="site-nav" aria-label="Primary">
+  <div class="nav-pill" role="tablist">
+    <span class="nav-hover" aria-hidden="true"></span>
+    <button class="tab-link active" data-tab="home" role="tab" aria-selected="true">Saaim</button>
+    <button class="tab-link" data-tab="projects" role="tab" aria-selected="false">Projects</button>
+    <button class="tab-link" data-tab="writing" role="tab" aria-selected="false">Writing</button>
+    <button class="tab-link" data-tab="photography" role="tab" aria-selected="false">Photography</button>
+  </div>
+  <div class="nav-links">
+    <!-- Swap these three hrefs for your real profiles / resume -->
+    <a href="https://github.com/sjapanwala" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://www.linkedin.com/in/sjapanwala" target="_blank" rel="noopener">LinkedIn</a>
+    <a href=""></a>
+  </div>
+</nav>
+
+<main id="main">
+
+  <!-- ========================= HOME ========================= -->
+  <section class="tab-panel active" id="tab-home" data-tab-panel="home">
+    <div class="home-grid">
+      <div class="home-intro">
+        <!-- Rotates through greetings in js/main.js (see GREETINGS) -->
+        <h1 class="section-header greeting" id="greeting" lang="en">Hello!</h1>
+        <p class="intro-text">
+          My Name is <span class="ink">Saaim</span> <span class="wave-emoji" aria-hidden="true">👋</span> and welcome to my small, slowly-growing corner of the internet.
+          <br><br>
+          my interests live in a little bit of everything —
+          <a href="#projects" class="ink word-link link-software" data-tab-link="projects">software</a>,
+          <a href="#photography" class="ink word-link link-photography" data-tab-link="photography">photography</a>,
+          <a href="#writing" class="ink word-link link-writing" data-tab-link="writing">writing</a>,
+          and whatever else i'm tending to lately.
+          <br><br>
+          I like building unnecessary things, reading more than i finish, and drinking coffee that's
+          probably too fussy to make on a weekday <span class="coffee-emoji" aria-hidden="true">☕</span>.
+        </p>
+      </div>
+      <!-- Swap the image/caption below for your own — see README -->
+      <figure class="intro-photo">
+        <img src="assets/main-page-web.jpg" alt="Saaim holding up a camera on a lantern-lit boardwalk in Dōtonbori, Osaka at sunset">
+        <figcaption class="sticky-note">dōtonbori, osaka 🇯🇵</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ======================= PROJECTS ======================= -->
+  <section class="tab-panel" id="tab-projects" data-tab-panel="projects">
+    <h1 class="section-header-projects">Projects.</h1>
+    <p class="section-intro"></p>
+    <div class="bento-grid bento-grid--lg bento-grid--fill" id="projectsGrid"><!-- rendered by js/main.js from content/projects.js --></div>
+  </section>
+
+  <!-- ======================== WRITING ======================== -->
+  <section class="tab-panel" id="tab-writing" data-tab-panel="writing">
+    <h1 class="section-header-writing">Writing.</h1>
+    <p class="section-intro"></p>
+    <div class="bento-grid bento-grid--lg" id="writingGrid"><!-- rendered by js/main.js from content/writing.js --></div>
+  </section>
+
+  <!-- ====================== PHOTOGRAPHY ====================== -->
+  <section class="tab-panel" id="tab-photography" data-tab-panel="photography">
+    <h1 class="section-header-photography">Photography.</h1>
+    <p class="section-intro"></p>
+    <div class="bento-grid bento-grid--lg bento-grid--fill" id="photographyGrid"><!-- rendered by js/main.js from content/photography.js --></div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     Content data — plain JS files (not .json) so this page can be
+     opened directly as a file:// URL with no local server: browsers
+     block fetch()/XHR of local JSON over file://, but a same-page
+     <script> tag works everywhere with zero build step. Each file
+     is commented — edit the arrays to add/change/remove cards.
+     ============================================================ -->
+<script src="content/projects.js"></script>
+<script src="content/writing.js"></script>
+<script src="content/photography.js"></script>
+<script src="js/main.js"></script>
+<footer>
+</footer>
+</body>
+</html>
