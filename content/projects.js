@@ -16,6 +16,12 @@
 //   image       string   — optional path to a real screenshot (e.g.
 //                          "assets/your-file.jpg"); used instead of the
 //                          gradient placeholder when present
+//   imagePosition string — optional CSS object-position for the image
+//                          (default "top"); e.g. "center 90%" to show the
+//                          lower part of a tall screenshot instead
+//   portrait    bool     — optional; set true for a tall image (e.g. a phone
+//                          mockup) so it sits in a narrow, centered frame
+//                          instead of being stretched across the card
 //   gradient    string   — placeholder "screenshot" style: grad-1..grad-8,
 //                          used when there's no `image` yet
 //   span        string   — "" (1 col) | "wide" (2 cols) | "big" (3 cols)
@@ -28,6 +34,16 @@ const PROJECTS = [
     description: "Portfolio intelligence for macOS and Windows — an AI-scored portfolio tracker with watchlists and predictive analytics, built for individual investors who want more than a spreadsheet.",
     link: "https://soritch.com",
     image: "assets/soritch-web.webp",
+    gradient: "grad-1",
+    span: "wide"
+  },
+  {
+    title: "Tameru",
+    category: "Software",
+    description: "An opensource budgeting app for IOS and Android.",
+    link: "https://tameru.cc",
+    image: "assets/tameru-iphone-mockup.png",
+    portrait: true,
     gradient: "grad-1",
     span: "wide"
   },
@@ -46,6 +62,7 @@ const PROJECTS = [
     description: "",
     link: "https://whoopity.sjapanwala.com",
     image: "assets/whoopity.png",
+    imagePosition: "center 90%",
     gradient: "grad-2",
     span: "wide"
   }

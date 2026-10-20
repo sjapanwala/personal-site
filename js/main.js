@@ -33,12 +33,12 @@ function renderProjectCard(p) {
   // Use a real screenshot (p.image) when there is one; otherwise fall
   // back to the abstract placeholder shape (p.gradient).
   const art = p.image
-    ? `<img class="card-art" src="${p.image}" alt="${p.title} screenshot">`
+    ? `<img class="card-art" src="${p.image}" alt="${p.title} screenshot"${p.imagePosition ? ` style="object-position: ${p.imagePosition}"` : ''}>`
     : `<div class="card-art art-${p.gradient.replace('grad-', '')}" aria-hidden="true"></div>`;
   return `
     <a class="card card--project ${spanClass(p.span)}" href="${p.link}" target="_blank" rel="noopener">
       ${cardHeader(`${p.category} · ${p.title}`)}
-      <div class="card-project-art">${art}</div>
+      <div class="card-project-art${p.portrait ? ' card-project-art--portrait' : ''}">${art}</div>
     </a>`;
 }
 

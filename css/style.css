@@ -594,19 +594,40 @@ a.card { cursor: pointer; }
   margin: 14px 16px -20px;
   border-radius: 8px 8px 0 0;
   overflow: hidden;
-  box-shadow: 0 2px 10px rgba(17, 17, 17, 0.1);
-  background: var(--card-bg);
 }
 
 .card--project .card-project-art > * {
   width: 100%;
   height: 100%;
+  background: transparent;
   object-fit: cover;
   object-position: top;
   transition: transform 300ms ease;
 }
+/* Portrait screenshots (phone mockups, p.portrait) are tilted and
+   pushed toward the bottom-right so the phone bleeds off the card's
+   edge at an angle — shows more of the screen than a straight crop.
+   The frame's clipping is dropped so the tilted corners aren't cut
+   square (the card itself still clips via overflow). */
+.card--project .card-project-art--portrait {
+  align-self: center;
+  width: 44%;
+  max-width: 230px;
+  overflow: visible;
+  border-radius: 0;
+}
+.card--project .card-project-art.card-project-art--portrait > * {
+  height: auto;
+  object-fit: contain;
+  transform: translate(10%, 0) rotate(-20deg);
+  filter: drop-shadow(0 12px 24px rgba(17, 17, 17, 0.18));
+}
+.card--project:hover .card-project-art.card-project-art--portrait > * {
+  transform: translate(10%, 0) rotate(-20deg) scale(1.06);
+}
+
 /* Only the screenshot/logo scales on hover — the frame (padding,
-   rounded corner, shadow) around it stays put. */
+   rounded corner) around it stays put. */
 .card--project:hover .card-project-art > * {
   transform: scale(1.06);
 }
